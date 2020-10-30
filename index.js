@@ -1,15 +1,25 @@
-var express = require('express');
-var mysql = require('./dbcon.js');
-var CORS = require('cors'); 
-
-var app = express();
+const express = require('express');
+const mysql = require('./dbcon');
+const CORS = require('cors'); 
+const cookieParser = require("cookie-parser");
+const cookieSession = require('cookie-session');
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const request = require("request");
+const app = express();
 app.set('port', 1738);
+app.use(CORS());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
-app.use(CORS());
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+//set view engine
+app.set("view engine", "ejs");
+//linking main.css
+app.use(express.static(__dirname + "/public"));
+// app.use(express.urlencoded({ extended: false }));
 const getAllQueryUser = 'SELECT * FROM user';
-const getUserQuery = 'SELECT max(username) from user WHERE username=?';
+const getUserQuery = 'SELECT MAX(username) from user WHERE username=?';
 const insertQueryUser = 'INSERT INTO user (`username`, `password`, `recipes`) VALUES (?, ?, ?)';
 const updateQueryUser = 'UPDATE user SET username=?, password=?, recipes=? WHERE id=?';
 const deleteQueryUser = 'DELETE FROM user WHERE id=?';
@@ -29,49 +39,58 @@ const getAllData = (res)=>{
         res.json({rows: rows});
     });
     };
+app.get('/',(req,res)=>{
+    res.render("features/home");
+});
 // show signUp page
 app.get('/signUp', (req,res)=>{
-    res.render("views/features/signUp");
+    res.render("features/signUp");
 });
 // checking to see if signup is valid or if it needs to be redirected
-app.post('/signUp',function(req,res,next){
-    var {username, password, recipe} = req.body;
-    mysql.pool.query(getUserQuery, [username], (err, result)=>{
+app.post('/signUp',(req,res,next)=>{
+    var reg = {username: req.body.username, password: req.body.password, recipes: null};
+    var usernameReg = req.body.username;
+    console.log(reg, usernameReg)
+    mysql.pool.query(getUserQuery, usernameReg, (err, result)=>{
+        const returnedPacket = JSON.parse(JSON.stringify(result))
         if(err){
             next(err)
+            console.log(err)
             return;
-        }else if(result=='NULL'){
-            mysql.pool.query(insertQueryUser, [username, password, recipes],(err, result)=>{
-                if(err){
-                  next(err);
-                  return;
-                }else{
-                    res.render("views/features/login");
-                }
-            });
+        }else if(returnedPacket[0]["MAX(username)"] == null){
+                mysql.pool.query(insertQueryUser, [reg.username, reg.password, reg.recipes],(err, result)=>{
+                    if(err){
+                    console.log(reg)
+                      next(err);
+                      return;
+                    }else{
+                        res.render("features/login");
+                    }
+                });
         }else{
-            res.render("views/features/signUp");
+            // console.log(reg)
+            res.render("features/signUp");
         }
   });
 });
 
 // show login page
 app.get("/login", (req, res)=>{
-    res.render("views/features/signUp");
+    res.render("features/login");
 });
 
 
-app.use(function(req,res){
+app.use((req,res)=>{
     res.status(404);
     res.send('404');
     });
     
-app.use(function(err, req, res, next){
+app.use((err, req, res, next)=>{
     console.error(err.stack);
     res.status(500);
     res.send('500');
 });
 
-app.listen(app.get('port'), function(){
+app.listen(app.get('port'),()=>{
     console.log('Express started on http://flip2.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
