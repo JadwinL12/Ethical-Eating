@@ -1,0 +1,28 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "cs361",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthony-ferrari/ethical_eating.git"
+  },
+  "author": "anthony ferrari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthony-ferrari/ethical_eating/issues"
+  },
+  "homepage": "https://github.com/Anthony-ferrari/ethical_eating#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "forever": "^3.0.0",
+    "mysql": "^2.8.0"
+  }
+}
