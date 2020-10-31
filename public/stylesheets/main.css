@@ -1,0 +1,200 @@
+/* header log in / sign up buttons hover */
+a{
+    color: black !important;
+}
+.loginButton {
+    display: inline-block;
+}
+.signUpButton{
+    display: inline-block;
+}
+/* login start */
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+.modalLogin{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+.modalLogin.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.modalLogin-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modalLogin-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modalLogin-header .close-LoginButton{ 
+    cursor: pointer;
+    border:none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modalLogin-body{
+    padding: 10px 15px;
+}
+
+#overlayLogin{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+#overlayLogin.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* login ends */
+
+/* sign up starts */
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+.modalSignUp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+.modalSignUp.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.modalSignUp-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modalSignUp-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modalSignUp-header .close-SignUpButton{ 
+    cursor: pointer;
+    border:none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modalSignUp-body{
+    padding: 10px 15px;
+}
+
+#overlaySignUp{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+#overlaySignUp.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* sign up ends */
+
+/* modal guest button */
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+.modalGuest {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modalGuest.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.modalGuest-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.modalGuest-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modalGuest-header .close-button{ 
+    cursor: pointer;
+    border:none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modalGuest-body{
+    padding: 10px 15px;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}

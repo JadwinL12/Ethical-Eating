@@ -60,7 +60,6 @@ app.post('/signUp',(req,res,next)=>{
         }else if(returnedPacket[0]["MAX(username)"] == null){
                 mysql.pool.query(insertQueryUser, [reg.username, reg.password, reg.recipes],(err, result)=>{
                     if(err){
-                    console.log(reg)
                       next(err);
                       return;
                     }else{
@@ -76,6 +75,10 @@ app.post('/signUp',(req,res,next)=>{
 
 // show login page
 app.get("/login", (req, res)=>{
+    res.render("features/login");
+});
+// login functionality - mysql
+app.post('/login', (req, res)=>{
     res.render("features/login");
 });
 

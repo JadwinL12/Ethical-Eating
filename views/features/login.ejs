@@ -9,7 +9,18 @@
                 <!-- needs action -->
                 <div class="d-flex justify-content-center links mb-3">
                     <button class="btn btn-outline-info login_btn mr-3" role="button" aria-disabled="true">Log In As a Guest</button>
-                    <button class="btn btn-outline-info login_btn ml-2" role="button" aria-disabled="true">Info</button>
+                    <button data-modal-target="#modalGuest" class="btn btn-outline-info login_btn ml-2" role="button" aria-disabled="true">Info</button>
+                    <div class="modalGuest" id="modalGuest">
+                        <div class="modalGuest-header">
+                            <div class="title">Signing In as a Guest</div>
+                                <button data-close-button class="close-button guestButton">&times;</button>
+                        </div>
+                        <div class=modalGuest-body>
+                            By clicking on this button, you will be logged in as a guest. 
+                            This means you will NOT be able to save recipes that you find or create.
+                        </div>
+                    </div>
+                    <div id="overlay"></div>
                 </div>
 				<form>
 					<div class="input-group form-group">

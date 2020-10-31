@@ -26,8 +26,38 @@
 				</ul>
 			</div>
 			<div>
-				<a class="navbar-brand btn btn-outline-secondary auth" href="/login">Login</a>
-				<a class="navbar-brand btn btn-outline-secondary auth" href="/signUp">Sign Up</a>
+                <div class="loginButton mr-4">
+                    <a data-modallogin-target="#modalLogin" class="navbar-brand loginHeader" href="/login">Login</a>
+                    <div class="modalLogin" id="modalLogin">
+                        <div class="modalLogin-header">
+                            <div class="title">Logging Into Your Account</div>
+                                <button data-close-loginButton class="close-LoginButton">&times;</button>
+                        </div>
+                        <div class=modalLogin-body>
+                            By clicking Login, you will be redirected to our Login Page and asked
+                            to enter your username and password.
+                            <a class="btn btn-outline-secondary" href="/Login">Log In</a>
+                        </div>
+                    </div>
+                    <div id="overlayLogin"></div>
+                </div>
+                <div class="signUpButton">
+                    <a data-modalSignUp-target = "#modalSignUp" class="navbar-brand signUpHeader" href="/signUp">Sign Up</a>
+                    <div class="modalSignUp" id="modalSignUp">
+                        <div class="modalSignUp-header">
+                            <div class="title">Signing Into Your Account</div>
+                                <button data-close-SignUpButton class="close-SignUpButton">&times;</button>
+                        </div>
+                        <div class=modalSignUp-body>
+                            By clicking Sign Up, you will be redirected to our Sign Up Page and asked
+                            to enter a valid username and password. If successful, you will be redirected to 
+                            our Login Page to log into your new account.
+                            <a class="btn btn-outline-secondary" href="/signUp">Sign Up</a>
+                        </div>
+                    </div>
+                    <div id="overlaySignUp"></div>
+                </div>
+
 			</div>
 		</div>
-	</nav>
+    </nav>
