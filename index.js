@@ -39,8 +39,15 @@ const getAllData = (res)=>{
         res.json({rows: rows});
     });
     };
+
+// home page
 app.get('/',(req,res)=>{
     res.render("features/home");
+});
+
+// ingredients page
+app.get('/ingredients',(req,res)=>{
+    res.render("features/ingredients");
 });
 // show signUp page
 app.get('/signUp', (req,res)=>{
