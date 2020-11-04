@@ -49,6 +49,14 @@ app.get('/',(req,res)=>{
 app.get('/ingredients',(req,res)=>{
     res.render("features/ingredients");
 });
+
+// saved ingredients
+app.get('/saveRecipes', (req,res)=>{
+    res.render("features/saveRecipes");
+});
+
+// login and sign up are below 
+
 // show signUp page
 app.get('/signUp', (req,res)=>{
     res.render("features/signUp");
