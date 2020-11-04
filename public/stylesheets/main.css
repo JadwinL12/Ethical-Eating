@@ -199,6 +199,7 @@
     pointer-events: all;
 }
 
+/* start of ingredients page */
 .accordion {
     background-color: #eee;
     color: #444;
@@ -293,4 +294,29 @@
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
   border: 2px solid black;
+}
+/* ingredients end */ 
+
+
+/* saved ingredients css start */
+.left-side{
+    float: left;
+    width: 25%;
+    border: 2px solid black;
+}
+
+.right-side {
+    float: left;
+    width: 50%;
+    border: 2px solid black;
+}
+
+.titleName{
+    color: black;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }

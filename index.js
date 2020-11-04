@@ -51,8 +51,8 @@ app.get('/ingredients',(req,res)=>{
 });
 
 // saved ingredients
-app.get('/saveRecipes', (req,res)=>{
-    res.render("features/saveRecipes");
+app.get('/savedRecipes', (req,res)=>{
+    res.render("features/savedRecipes");
 });
 
 // login and sign up are below 

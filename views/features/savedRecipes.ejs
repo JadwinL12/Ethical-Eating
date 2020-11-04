@@ -1,24 +1,36 @@
 <%- include("../partials/header") %>
 <div> 
     <div>
-        <p> Saved Recipes </p>
+        <h1 class='titleName'>Saved Recipes</h1>
             <div class="container">
-                <div class="col-lg-6">
-                  <h5>Carbonara</h5>
-                  <p class="savedIngredientList"> 
-                      <ul>
-                          <li>Virgin Olive Oil</li>
-                          <li>Pancetta</li>
-                          <li>Garlic</li>
-                          <li>Eggs</li>
-                          <li>Spaghetti</li>
-                          <li>Salt</li>
-                          <li>Black Pepper</li>
-                      </ul>
-                  </p>
+                <div class="row">
+                    <div class="col-lg-6 left-side">
+                    <h3>Carbonara</h3>
+                    <h5> Ingredients: </h5>
+                    <p class="savedIngredientList"> 
+                        <ul>
+                            <li>Virgin Olive Oil <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                            <li>Pancetta <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                            <li>Garlic <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                            <li>Eggs <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                            <li>Spaghetti <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                            <li>Salt <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                            <li>Black Pepper <span class="glyphicon glyphicon-chevron-right"></span> </li>
+                        </ul>
+                    </p>
+                    </div>
+                    <div class="col-lg-6 right-side">
+                        <h3>Description of Ingredient</h5>
+                        <p>Ethical Ranking:<span> stars/ total stars</span> </p>
+                        <h4> Alternatives: </h4>
+                        <ul>
+                            <li>Alt 1</li>
+                            <li>Alt 2</li>
+                            <li>Alt 3</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        <%}%>
     </div>
 </div>
 <%- include("../partials/footer") %>
