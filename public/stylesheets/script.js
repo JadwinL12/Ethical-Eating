@@ -97,17 +97,3 @@ function closeModal(modal){
 }
 
 
-// sign up inputs
-
-// start of username
-// const usernameInputSignUp = document.getElementsByClassName("signUpUsername");
-// const passwordInputSignUp = document.getElementsByClassName("signUpPassword");
-
-// usernameInputSignUp.forEach(input=>{
-//     input.addEventListener("input", ()=>{
-//         if(!this.match(/^[a-z0-9]+$/i)){
-//             //show error
-            
-//         }
-//     })
-// })
