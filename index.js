@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 //linking main.css
 app.use(express.static(__dirname + "/public"));
+app.use('/img', express.static(__dirname + '/Images'));
 // app.use(express.urlencoded({ extended: false }));
 const getAllQueryUser = 'SELECT * FROM user';
 const getUserQuery = 'SELECT MAX(username) from user WHERE username=?';
@@ -48,6 +49,11 @@ app.get('/',(req,res)=>{
 // ingredients page
 app.get('/ingredients',(req,res)=>{
     res.render("features/ingredients");
+});
+
+// ethics page
+app.get('/ethics',(req,res)=>{
+    res.render("features/ethics");
 });
 
 // saved ingredients
@@ -109,6 +115,6 @@ app.use((err, req, res, next)=>{
     res.send('500');
 });
 
-app.listen(app.get('port'),()=>{
+app.listen(8080,()=>{
     console.log('Express started on http://flip2.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
