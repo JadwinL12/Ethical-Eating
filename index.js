@@ -84,7 +84,7 @@ app.post('/signUp',(req,res,next)=>{
                       next(err);
                       return;
                     }else{
-                        res.render("features/login");
+                        res.render("features/successSignUp");
                     }
                 });
         }else{
