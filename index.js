@@ -116,5 +116,5 @@ app.use((err, req, res, next)=>{
 });
 
 app.listen(1738,()=>{
-    console.log('Express started on http://flip2.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
+    console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
