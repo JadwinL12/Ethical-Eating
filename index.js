@@ -46,6 +46,11 @@ app.get('/',(req,res)=>{
     res.render("features/home");
 });
 
+// meals page
+app.get('/meals', (req,res)=>{
+    res.render("features/meals");
+});
+
 // ingredients page
 app.get('/ingredients',(req,res)=>{
     res.render("features/ingredients");
