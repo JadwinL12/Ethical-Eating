@@ -45,7 +45,7 @@ function addIngredient() {
             let ing = document.createElement("li");
             let removeButton = document.createElement("span")
             removeButton.className = "removeIngredient";
-            removeButton.textContent = "x";
+            removeButton.textContent = "Remove";
             removeButton.addEventListener("click", function() {
                 let parent = removeButton.parentElement;
                 let grandParent = parent.parentElement;
