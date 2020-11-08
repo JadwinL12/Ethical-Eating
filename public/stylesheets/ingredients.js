@@ -52,7 +52,7 @@ function addIngredient() {
                 grandParent.removeChild(parent);
             })
             ing.textContent = name;
-            ing.className = "ing";
+            ing.className = "recipeIng";
             ing.appendChild(removeButton);
             list[0].appendChild(ing);
         });
