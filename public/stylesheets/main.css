@@ -279,6 +279,12 @@
     border: 2px solid black;
 }
 
+.middleContainer {
+    align-self: center;
+    width: 50%;
+    border: 2px solid black;
+}
+
 .rightContainer {
     float: left;
     width: 50%;
