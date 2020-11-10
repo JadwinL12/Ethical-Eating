@@ -22,24 +22,6 @@ app.use('/img', express.static(__dirname + '/Images'));
 const getAllQueryUser = 'SELECT * FROM user';
 const getUserQuery = 'SELECT MAX(username) from user WHERE username=?';
 const insertQueryUser = 'INSERT INTO user (`username`, `password`, `recipes`) VALUES (?, ?, ?)';
-const updateQueryUser = 'UPDATE user SET username=?, password=?, recipes=? WHERE id=?';
-const deleteQueryUser = 'DELETE FROM user WHERE id=?';
-const dropTableQueryUser = 'DROP TABLE IF EXISTS user';
-const makeTableQueryUser = `CREATE TABLE user(
-                        id INT PRIMARY KEY AUTO_INCREMENT,
-                        username VARCHAR(10) NOT NULL,
-                        password VARCHAR(10) NOT NULL,
-                        recipes INT;`;
-
-const getAllData = (res)=>{
-    mysql.pool.query(getAllQueryUser, (err, rows, fields)=>{
-        if(err){
-        next(err);
-        return
-        }
-        res.json({rows: rows});
-    });
-    };
 
 // home page
 app.get('/',(req,res)=>{
