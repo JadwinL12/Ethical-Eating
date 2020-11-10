@@ -83,7 +83,7 @@ app.post('/signUp',(req,res,next)=>{
             console.log(err)
             return;
         }else if(returnedPacket[0]["MAX(username)"] == null){
-                mysql.pool.query(insertQueryUser, [reg.username, reg.password, reg.recipes],(err, result)=>{
+                mysql.pool.query(insertQueryUser, [reg.username, reg.password, reg.recipes],(err)=>{
                     if(err){
                       next(err);
                       return;
