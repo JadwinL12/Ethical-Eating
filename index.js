@@ -76,7 +76,6 @@ app.get('/signUp', (req,res)=>{
 app.post('/signUp',(req,res,next)=>{
     var reg = {username: req.body.username, password: req.body.password, recipes: null};
     var usernameReg = req.body.username;
-    console.log(reg, usernameReg)
     mysql.pool.query(getUserQuery, usernameReg, (err, result)=>{
         const returnedPacket = JSON.parse(JSON.stringify(result))
         if(err){
@@ -93,7 +92,6 @@ app.post('/signUp',(req,res,next)=>{
                     }
                 });
         }else{
-            // console.log(reg)
             res.render("features/signUp");
         }
   });
