@@ -22,24 +22,6 @@ app.use('/img', express.static(__dirname + '/Images'));
 const getAllQueryUser = 'SELECT * FROM user';
 const getUserQuery = 'SELECT MAX(username) from user WHERE username=?';
 const insertQueryUser = 'INSERT INTO user (`username`, `password`, `recipes`) VALUES (?, ?, ?)';
-const updateQueryUser = 'UPDATE user SET username=?, password=?, recipes=? WHERE id=?';
-const deleteQueryUser = 'DELETE FROM user WHERE id=?';
-const dropTableQueryUser = 'DROP TABLE IF EXISTS user';
-const makeTableQueryUser = `CREATE TABLE user(
-                        id INT PRIMARY KEY AUTO_INCREMENT,
-                        username VARCHAR(10) NOT NULL,
-                        password VARCHAR(10) NOT NULL,
-                        recipes INT;`;
-
-const getAllData = (res)=>{
-    mysql.pool.query(getAllQueryUser, (err, rows, fields)=>{
-        if(err){
-        next(err);
-        return
-        }
-        res.json({rows: rows});
-    });
-    };
 
 // home page
 app.get('/',(req,res)=>{
@@ -76,7 +58,6 @@ app.get('/signUp', (req,res)=>{
 app.post('/signUp',(req,res,next)=>{
     var reg = {username: req.body.username, password: req.body.password, recipes: null};
     var usernameReg = req.body.username;
-    console.log(reg, usernameReg)
     mysql.pool.query(getUserQuery, usernameReg, (err, result)=>{
         const returnedPacket = JSON.parse(JSON.stringify(result))
         if(err){
@@ -84,7 +65,7 @@ app.post('/signUp',(req,res,next)=>{
             console.log(err)
             return;
         }else if(returnedPacket[0]["MAX(username)"] == null){
-                mysql.pool.query(insertQueryUser, [reg.username, reg.password, reg.recipes],(err, result)=>{
+                mysql.pool.query(insertQueryUser, [reg.username, reg.password, reg.recipes],(err)=>{
                     if(err){
                       next(err);
                       return;
@@ -93,7 +74,6 @@ app.post('/signUp',(req,res,next)=>{
                     }
                 });
         }else{
-            // console.log(reg)
             res.render("features/signUp");
         }
   });
