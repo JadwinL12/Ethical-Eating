@@ -85,12 +85,23 @@ app.get("/login", (req, res)=>{
     res.render("features/login");
 });
 // login functionality - mysql
-app.post('/login', (req, res)=>{
+app.post('/login', (req, res, next)=>{
     var username = req.body.username;
     var password = req.body.password;
-    mysql.pool.query(getUserQueryUandP, username, password, (err, result)=>{
-        console.log(result)
-    });
+    mysql.pool.query(getUserQueryUandP, [username, password], (err, result)=>{
+        if(err){
+            next(err)
+            console.log(err)
+            return;
+        }else{
+            console.log(result)
+            if(result.length >0){
+                res.render("features/home")
+            }else{
+                res.render("feature/login")
+            }
+        }
+})});
 
 
 app.use((req,res)=>{
