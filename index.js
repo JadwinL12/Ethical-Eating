@@ -91,10 +91,8 @@ app.post('/login', (req, res, next)=>{
     mysql.pool.query(getUserQueryUandP, [username, password], (err, result)=>{
         if(err){
             next(err)
-            console.log(err)
             return;
         }else{
-            console.log(result)
             if(result.length >0){
                 res.render("features/home")
             }else{
