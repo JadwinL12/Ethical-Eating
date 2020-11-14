@@ -20,7 +20,8 @@ app.use(express.static(__dirname + "/public"));
 app.use('/img', express.static(__dirname + '/Images'));
 // app.use(express.urlencoded({ extended: false }));
 const getAllQueryUser = 'SELECT * FROM user';
-const getUserQuery = 'SELECT MAX(username) from user WHERE username=?';
+const getUserQueryUsername = 'SELECT MAX(username) from user WHERE username=?';
+const getUserQueryUandP = 'SELECT username,password from user WHERE username=? and password=?';
 const insertQueryUser = 'INSERT INTO user (`username`, `password`, `recipes`) VALUES (?, ?, ?)';
 
 // home page
@@ -58,7 +59,7 @@ app.get('/signUp', (req,res)=>{
 app.post('/signUp',(req,res,next)=>{
     var reg = {username: req.body.username, password: req.body.password, recipes: null};
     var usernameReg = req.body.username;
-    mysql.pool.query(getUserQuery, usernameReg, (err, result)=>{
+    mysql.pool.query(getUserQueryUsername, usernameReg, (err, result)=>{
         const returnedPacket = JSON.parse(JSON.stringify(result))
         if(err){
             next(err)
@@ -84,9 +85,21 @@ app.get("/login", (req, res)=>{
     res.render("features/login");
 });
 // login functionality - mysql
-app.post('/login', (req, res)=>{
-    res.render("features/login");
-});
+app.post('/login', (req, res, next)=>{
+    var username = req.body.username;
+    var password = req.body.password;
+    mysql.pool.query(getUserQueryUandP, [username, password], (err, result)=>{
+        if(err){
+            next(err)
+            return;
+        }else{
+            if(result.length >0){
+                res.render("features/home")
+            }else{
+                res.render("feature/login")
+            }
+        }
+})});
 
 
 app.use((req,res)=>{
