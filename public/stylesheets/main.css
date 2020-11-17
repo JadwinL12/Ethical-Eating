@@ -234,14 +234,30 @@
   }
 
 .title {
-    background-color: #696969;
+    background-color: #708090;
     color: #F8F8FF;
     padding: 18px;
     width: 100%;
     text-align: left;
-    border: none;
+    border-bottom: 2px solid black;
     outline: none;
     transition: 0.4s;
+    height: 64px;
+}
+
+.changeDisplay {
+    background-color: #4CAF50;
+    color: black;
+    /* padding: 18px; */
+    width: 100%;
+    text-align: left;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    /* outline: none; */
+    /* transition: 0.4s; */
+    height: 51px;
 }
 
 .addIngredient {
@@ -275,8 +291,16 @@
 
 .leftContainer {
     float: left;
-    width: 25%;
+    width: 20%;
     border: 2px solid black;
+    display: block;
+}
+
+.leftContainer2 {
+    float: left;
+    width: 20%;
+    border: 2px solid black;
+    display: none;
 }
 
 .middleContainer {
@@ -287,12 +311,22 @@
 
 .rightContainer {
     float: left;
-    width: 50%;
+    width: 45%;
+    /* border-right: 2px solid black;
+    border-bottom: 2px solid black; */
     border: 2px solid black;
+    transition: 0.3s;
+}
+
+.rightContainer2 {
+    display: none;
+    transition: 0.2s;
+    transition-delay: 2s;
 }
 
 .recipeName {
   text-align: center;
+  font-size: 28px;
 }
 
 .topContainer {
@@ -302,6 +336,25 @@
   font-family: Arial, Helvetica, sans-serif;
   border: 2px solid black;
 }
+
+.ethics {
+    float: left;
+    /* width: 27.5%; */
+    width: 15%;
+    border: 2px solid black;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+.alternatives {
+    float: left;
+    /* width: 27.5%; */
+    width: 15%;
+    border: 2px solid black;
+    text-align: center;
+    transition: 0.3s;
+}
+
 /* ingredients end */ 
 
 
@@ -333,7 +386,7 @@
     border-radius: 5px;
     text-align: center;
     float: right;
-    width: 10%;
+    /* width: 10%; */
     height: 5%;
     cursor: pointer;
     font-size: 15px;
