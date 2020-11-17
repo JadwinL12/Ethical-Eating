@@ -91,16 +91,18 @@ function showEthicsWindow () {
   if (numOfIng > 1) {
     rightCon.style.width = "25%";
     rightCon2.style.display = "block";
-    setTimeout(function() {
-      ethics.style.width = "27.5%";
-      alternatives.style.width = "27.5%";
-    }, 100);
+    ethics.style.width = "27.5%";
+    alternatives.style.width = "27.5%";
+    // setTimeout(function() {
+    //   ethics.style.width = "27.5%";
+    //   alternatives.style.width = "27.5%";
+    // }, 100);
   }
   else {
-    ethics.style.width = "15%";
-    alternatives.style.width = "15%";
-    rightCon.style.width = "50%";
-    rightCon2.style.display = "none";
+    ethics.style.width = "17.5%";
+    alternatives.style.width = "17.5%";
+    rightCon.style.width = "45%";
+    // rightCon2.style.display = "none";
   }
 }
 

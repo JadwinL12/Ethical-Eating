@@ -319,7 +319,7 @@
 }
 
 .rightContainer2 {
-    display: none;
+    /* display: none; */
     transition: 0.2s;
     transition-delay: 2s;
 }
@@ -340,7 +340,7 @@
 .ethics {
     float: left;
     /* width: 27.5%; */
-    width: 15%;
+    width: 17.5%;
     border: 2px solid black;
     text-align: center;
     transition: 0.3s;
@@ -349,7 +349,7 @@
 .alternatives {
     float: left;
     /* width: 27.5%; */
-    width: 15%;
+    width: 17.5%;
     border: 2px solid black;
     text-align: center;
     transition: 0.3s;
