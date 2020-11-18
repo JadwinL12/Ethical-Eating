@@ -95,16 +95,18 @@ function validationUsername(){
         document.getElementsByClassName("username")[0].style.backgroundColor = "DarkSeaGreen";
     }else{
         document.getElementsByClassName("username")[0].style.borderColor = "LightCoral";
+        document.getElementsByClassName("username")[0].style.backgroundColor = "";
     }
 }
 function validationPassword(){
     const password = document.getElementsByClassName("password")[0].value
     console.log(password)
-    if(password.length >= 8 && (/^[a-zA-Z0-9]+$/.test(username))){
+    if(password.length >= 8 && (/^[a-zA-Z0-9]+$/.test(password))){
         document.getElementsByClassName("password")[0].style.borderColor = "DarkSeaGreen";
         document.getElementsByClassName("password")[0].style.backgroundColor = "DarkSeaGreen";
     }else{
         document.getElementsByClassName("password")[0].style.borderColor = "LightCoral";
+        document.getElementsByClassName("password")[0].style.backgroundColor = "";
     }
 }
 
