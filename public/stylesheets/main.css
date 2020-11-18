@@ -355,6 +355,11 @@
     transition: 0.3s;
 }
 
+.recipeIng {
+    background-color: #32CD32;
+    transition: 0.4s;
+}
+
 /* ingredients end */ 
 
 

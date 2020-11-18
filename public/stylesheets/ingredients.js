@@ -56,6 +56,9 @@ function addIngredient() {
             ing.className = "recipeIng";
             ing.appendChild(removeButton);
             list[0].appendChild(ing);
+            setTimeout(function () {
+              ing.style.backgroundColor = "white";
+            }, 100)
             showEthicsWindow();
         });
     };
