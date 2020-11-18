@@ -43,24 +43,75 @@ function addIngredient() {
             let name = text.slice(0, text.length - 1);
             let list = document.getElementsByClassName("recipeIngredients")
             let ing = document.createElement("li");
-            let removeButton = document.createElement("span")
+            let removeButton = document.createElement("span");
             removeButton.className = "removeIngredient";
             removeButton.textContent = "Remove";
             removeButton.addEventListener("click", function() {
                 let parent = removeButton.parentElement;
                 let grandParent = parent.parentElement;
                 grandParent.removeChild(parent);
+                showEthicsWindow();
             })
             ing.textContent = name;
-            ing.className = "ing";
+            ing.className = "recipeIng";
             ing.appendChild(removeButton);
             list[0].appendChild(ing);
+            setTimeout(function () {
+              ing.style.backgroundColor = "white";
+            }, 100)
+            showEthicsWindow();
         });
     };
 }
 
+function changeMenuDisplay () {
+  let titleButton = document.getElementsByClassName("changeDisplay");
+  let i;
+  for (i = 0; i < titleButton.length; i++) {
+    let button = titleButton[i];
+    button.addEventListener("click", function() {
+      let leftContainer = document.getElementsByClassName("leftContainer")[0];
+      let leftContainer2 = document.getElementsByClassName("leftContainer2")[0];
+      if (leftContainer.style.display === "block") {
+        leftContainer.style.display = "none";
+        leftContainer2.style.display = "block";
+      }
+      else {
+        leftContainer2.style.display = "none";
+        leftContainer.style.display = "block";
+      }
+    })
+  }
+}
+
+function showEthicsWindow () {
+  let recipeList = document.getElementsByClassName("recipeIngredients")[0]
+  let numOfIng = recipeList.childNodes.length;
+  let rightCon = document.getElementsByClassName("rightContainer")[0];
+  let rightCon2 = document.getElementsByClassName("rightContainer2")[0];
+  let ethics = document.getElementsByClassName("ethics")[0];
+  let alternatives = document.getElementsByClassName("alternatives")[0];
+  if (numOfIng > 1) {
+    rightCon.style.width = "25%";
+    rightCon2.style.display = "block";
+    ethics.style.width = "27.5%";
+    alternatives.style.width = "27.5%";
+    // setTimeout(function() {
+    //   ethics.style.width = "27.5%";
+    //   alternatives.style.width = "27.5%";
+    // }, 100);
+  }
+  else {
+    ethics.style.width = "17.5%";
+    alternatives.style.width = "17.5%";
+    rightCon.style.width = "45%";
+    // rightCon2.style.display = "none";
+  }
+}
+
 window.addEventListener("load", function() {
     addIngredient();
+    changeMenuDisplay();
 })
 
 /* For ethics page, to be merged with ingredients/meals page eventually*/
