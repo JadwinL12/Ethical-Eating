@@ -97,4 +97,14 @@ function validationUsername(){
         document.getElementsByClassName("username")[0].style.borderColor = "LightCoral";
     }
 }
+function validationPassword(){
+    const password = document.getElementsByClassName("password")[0].value
+    console.log(password)
+    if(password.length >= 8){
+        document.getElementsByClassName("password")[0].style.borderColor = "DarkSeaGreen";
+        document.getElementsByClassName("password")[0].style.backgroundColor = "DarkSeaGreen";
+    }else{
+        document.getElementsByClassName("password")[0].style.borderColor = "LightCoral";
+    }
+}
 
