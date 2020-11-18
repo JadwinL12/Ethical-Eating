@@ -1,3 +1,4 @@
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 
@@ -79,5 +80,21 @@ function overlayRemove(overlay){
     overlay.classList.remove('active')
 }
 
+// event handler
+const usernameField = document.getElementsByClassName("username")[0]
+const passwordField = document.getElementsByClassName("password")[0]
 
+usernameField.addEventListener('input', validationUsername);
+passwordField.addEventListener('input', validationPassword);
+// login and sign up validation
+function validationUsername(){
+    const username = document.getElementsByClassName("username")[0].value
+    console.log(username.length)
+    if(username.length >= 8){
+        document.getElementsByClassName("username")[0].style.borderColor = "DarkSeaGreen";
+        document.getElementsByClassName("username")[0].style.backgroundColor = "DarkSeaGreen";
+    }else{
+        document.getElementsByClassName("username")[0].style.borderColor = "LightCoral";
+    }
+}
 
