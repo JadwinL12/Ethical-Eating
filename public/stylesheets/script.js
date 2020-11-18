@@ -90,7 +90,7 @@ passwordField.addEventListener('input', validationPassword);
 function validationUsername(){
     const username = document.getElementsByClassName("username")[0].value
     console.log(username.length)
-    if(username.length >= 8){
+    if(username.length >= 8 && (/^[a-zA-Z0-9]+$/.test(username))){
         document.getElementsByClassName("username")[0].style.borderColor = "DarkSeaGreen";
         document.getElementsByClassName("username")[0].style.backgroundColor = "DarkSeaGreen";
     }else{
@@ -100,7 +100,7 @@ function validationUsername(){
 function validationPassword(){
     const password = document.getElementsByClassName("password")[0].value
     console.log(password)
-    if(password.length >= 8){
+    if(password.length >= 8 && (/^[a-zA-Z0-9]+$/.test(username))){
         document.getElementsByClassName("password")[0].style.borderColor = "DarkSeaGreen";
         document.getElementsByClassName("password")[0].style.backgroundColor = "DarkSeaGreen";
     }else{
