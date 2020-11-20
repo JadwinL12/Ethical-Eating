@@ -248,15 +248,12 @@
 .changeDisplay {
     background-color: #4CAF50;
     color: black;
-    /* padding: 18px; */
     width: 100%;
     text-align: left;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 2px solid black;
-    /* outline: none; */
-    /* transition: 0.4s; */
     height: 51px;
 }
 
@@ -312,14 +309,11 @@
 .rightContainer {
     float: left;
     width: 45%;
-    /* border-right: 2px solid black;
-    border-bottom: 2px solid black; */
     border: 2px solid black;
     transition: 0.3s;
 }
 
 .rightContainer2 {
-    /* display: none; */
     transition: 0.2s;
     transition-delay: 2s;
 }
@@ -339,7 +333,6 @@
 
 .ethics {
     float: left;
-    /* width: 27.5%; */
     width: 17.5%;
     border: 2px solid black;
     text-align: center;
@@ -348,7 +341,6 @@
   
 .alternatives {
     float: left;
-    /* width: 27.5%; */
     width: 17.5%;
     border: 2px solid black;
     text-align: center;

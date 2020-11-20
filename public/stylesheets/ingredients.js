@@ -96,16 +96,11 @@ function showEthicsWindow () {
     rightCon2.style.display = "block";
     ethics.style.width = "27.5%";
     alternatives.style.width = "27.5%";
-    // setTimeout(function() {
-    //   ethics.style.width = "27.5%";
-    //   alternatives.style.width = "27.5%";
-    // }, 100);
   }
   else {
     ethics.style.width = "17.5%";
     alternatives.style.width = "17.5%";
     rightCon.style.width = "45%";
-    // rightCon2.style.display = "none";
   }
 }
 
