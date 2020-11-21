@@ -14,7 +14,7 @@
                         <button id="button" onclick=showPopup("pizzarecipe")>+</button>
                     </h3>
 
-                    <h3>Barbecue Bibs
+                    <h3>Barbecue Ribs
                         <button id="button" onclick=showPopup("bbqrib")>+</button>
                     </h3>
 
@@ -57,6 +57,24 @@
                     </div>
                 </div>
             </div>
+    
     </div>
+    <div class="SR_bottom_container">
+        <a class="buildYourOwn" href="/buildYourOwn">Build Your Own Recipe</a>
+        <button class="inform_button" onclick="togglePopup()">!</button>
+
+
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                  <div class="close-btn" onclick="togglePopup()">&times;</div>
+                  <h1>Information</h1>
+                  <p>Build your own recipe from scratch and save it from further review
+                  </p>
+                </div>
+              </div>
+            
+    </div>
+    
 </div>
 <%- include("../partials/footer") %>
