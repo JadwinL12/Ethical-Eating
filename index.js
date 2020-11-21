@@ -44,6 +44,11 @@ app.get('/savedRecipes', (req,res)=>{
     res.render("features/savedRecipes");
 });
 
+// build a recipe
+app.get('/buildYourOwn', (req,res)=>{
+    res.render("features/buildYourOwn");
+});
+
 // login and sign up are below 
 
 // show signUp page
