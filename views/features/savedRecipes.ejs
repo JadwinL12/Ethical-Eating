@@ -4,55 +4,12 @@
         <h1 class='titleName'>Saved Recipes</h1>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 left-side">
-                    <h3>Carbonara
-                        <button id="button" onclick=showPopup("carbonrecipe")>+</button>
-                    </h3>
-
-                    <h3>
-                        Hawaiian Pizza
-                        <button id="button" onclick=showPopup("pizzarecipe")>+</button>
-                    </h3>
-
-                    <h3>Barbecue Ribs
-                        <button id="button" onclick=showPopup("bbqrib")>+</button>
-                    </h3>
-
-
+                    <div class="col-lg-6 left-side" id = "listofSavedRecipe">
+                        <span id="SavedRecipeList"></span>
                     </div>
-                    <div class="col-lg-6 right-side">
-                        <h5> Ingredients: </h5>
-
                     
-                    <div class="savedIngredientList" id="carbonaraRecipe">
-
-                        <ul id="carbonrecipe" style="display: none;">
-                            <li>Virgin Olive Oil <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                            <li>Pancetta <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                            <li>Garlic <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                            <li>Eggs <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                            <li>Spaghetti <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                            <li>Salt <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                            <li>Black Pepper <span class="glyphicon glyphicon-chevron-right"></span> </li>
-                          
-                          
-                          </ul>
-
-                         <ul id="pizzarecipe" style="display: none;">
-                            <li>Bread flour<span class="glyphicon glyphicon-chevron-right"></span></li>
-                            <li>Olive Oil<span class="glyphicon glyphicon-chevron-right"></span></li>
-                            <li>Cheese<span class="glyphicon glyphicon-chevron-right"></span></li>
-                            <li>Pineapple<span class="glyphicon glyphicon-chevron-right"></span></li>
-                            <li>Bacon<span class="glyphicon glyphicon-chevron-right"></span></li>
-                        </ul>
-
-                        <ul id="bbqrib" style="display:none;">
-                            <li>Pork ribs<span class="glyphicon glyphicon-chevron-right"></span></li>
-                            <li>Barbecue sauce<span class="glyphicon glyphicon-chevron-right"></li>
-                            <li>Salt<span class="glyphicon glyphicon-chevron-right"></span></li>
-                        </ul>
-
-                    </div>
+                    <div class="col-lg-6 right-side">
+                        <h3>Ingredients:</h3><span id="output1"></span><br>
                         
                     </div>
                 </div>
