@@ -34,11 +34,6 @@ app.get('/ingredients',(req,res)=>{
     res.render("features/ingredients");
 });
 
-// ethics page
-app.get('/ethics',(req,res)=>{
-    res.render("features/ethics");
-});
-
 // saved ingredients
 app.get('/savedRecipes', (req,res)=>{
     res.render("features/savedRecipes");
