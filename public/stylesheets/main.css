@@ -352,7 +352,17 @@
     transition: 0.4s;
 }
 
+
 /* ingredients end */ 
+
+/* ethics start */
+
+.img1{
+    height: 3%;
+    width: 3%;
+  }
+
+/* ethics end */
 
 
 /* saved ingredients css start */
@@ -396,3 +406,8 @@
     background-color: #f44336;
     color: white;
 }
+
+.img1{
+    height: 3%;
+    width: 3%;
+  }

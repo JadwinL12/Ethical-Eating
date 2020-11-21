@@ -114,108 +114,137 @@ var food = `[
   {
       "name": "Brocolli",
       "type": "Vegetable",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":""
   },
   {
       "name": "Lettuce",
       "type": "Vegetable",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":""
   },
   {
       "name": "Cauliflower",
       "type": "Vegetable",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":""
   },
   {
       "name": "Spinach",
       "type": "Vegetable",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://www.cornucopia.org/2017/11/eat-organic-spinach-avoid-conventional/"
+  },
+  {
+    "name": "Celery",
+    "type": "Vegetable",
+    "ethicRank": 1,
+    "info":""
+  },
+  {
+    "name": "Cabbage",
+    "type": "Vegetable",
+    "ethicRank": 1,
+    "info":""
   },
   {
       "name": "Chicken",
       "type": "Meat",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7005410/"
   },
   {
       "name": "Beef",
       "type": "Meat",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://link.springer.com/referenceworkentry/10.1007%2F978-94-007-0929-4_453"
   },
   {
       "name": "Pork",
       "type": "Meat",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://www.animal-ethics.org/animal-exploitation-section/animals-used-food-introduction/pig-farms/"
   },
   {
       "name": "Turkey",
       "type": "Meat",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://www.latimes.com/opinion/op-ed/la-oe-singer-turkey-suffering-thanksgiving-20161122-story.html"
+  },
+  {
+    "name": "Lamb",
+    "type": "Meat",
+    "ethicRank": 1,
+    "info":""
   },
   {
       "name": "Butter",
       "type": "Dairy",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://www.ethicalconsumer.org/food-drink/shopping-guide/butter-spreads"
   },
   {
       "name": "Cream",
       "type": "Dairy",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://link.springer.com/article/10.1007/s10806-018-9740-9"
   },
   {
       "name": "Cow Milk",
       "type": "Dairy",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://link.springer.com/article/10.1007/s10806-018-9740-9"
   },
   {
       "name": "Almond Milk",
       "type": "Dairy",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":"https://sustainability.ucsf.edu/1.713"
   },
   {
       "name": "Oat Milk",
       "type": "Dairy",
-      "ethicRank": 1
+      "ethicRank": 1,
+      "info":""
   }
 ]`
 
 var mydata = JSON.parse(food);
 var alt = document.getElementById("alts");
+var ethics = document.getElementById("ethics");
 
-/* generates alternative ingredients based on food type, to be optimized later, so there aren't multiple functions that do the same thing*/
-function altGeneratorMeat (){
-  removeAlts()
-  for (i=0; i < mydata.length; i++){
-    var obj = mydata[i];
-    if (obj.type == "Meat"){
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(obj.name));
-    alt.appendChild(li);
-    }
-}}
+function typeFind(onclickID){
+  var idFound = onclickID;
+  window.foodType = idFound;
+};
 
-function altGeneratorDairy (){
-  removeAlts()
-  for (i=0; i < mydata.length; i++){
-    var obj = mydata[i];
-    if (obj.type == "Dairy"){
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(obj.name));
-    alt.appendChild(li);
-    }
-}}
-
-function altGeneratorVeggies (){
-  removeAlts()
-  for (i=0; i < mydata.length; i++){
-    var obj = mydata[i];
-    if (obj.type == "Veggies"){
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(obj.name));
-    alt.appendChild(li);
-    }
-}}
-
-function removeAlts(){
-  var alt_ul = document.getElementById("alts");
-  alt_ul.textContent = '';
+function nameFind(onclickID){
+  var nameFound = onclickID;
+  window.ingName = nameFound
 }
+
+function altGenerator(){
+  alt.textContent = ''
+  ethicsGenerator()
+  for (i=0; i < mydata.length; i++){
+    var obj = mydata[i];
+    if (obj.type == foodType){
+      var li = document.createElement("li");
+    li.appendChild(document.createTextNode(obj.name));
+    alt.appendChild(li);
+    }
+  }
+};
+
+
+function ethicsGenerator(){
+  ethics.textContent = ''
+  for (i=0; i < mydata.length; i++){
+    var obj = mydata[i];
+    if (obj.name == ingName){
+      var li = document.createElement("li");
+    li.appendChild(document.createTextNode(obj.info));
+    ethics.appendChild(li);
+    }
+  }
+};
