@@ -360,7 +360,15 @@
 .img1{
     height: 3%;
     width: 3%;
-  }
+ }
+
+.addAltIngredient {
+    text-align: center;
+    float: right;
+    width: 20%;
+    height: 10%;
+    cursor: pointer;
+}
 
 /* ethics end */
 
