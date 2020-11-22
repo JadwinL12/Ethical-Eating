@@ -223,6 +223,38 @@ function nameFind(onclickID){
   window.ingName = nameFound
 }
 
+// using addIngredient() as base, add alternative ingredients
+function addAltIngredient() {
+  let buttonList = document.getElementsByClassName("addAltIngredient");
+  let i;
+  for (i = 0; i < buttonList.length; i++) {
+      let button = buttonList[i];
+      button.addEventListener("click", function() {
+          let text = button.parentElement.textContent;
+          let name = text.slice(0, text.length - 1);
+          let list = document.getElementsByClassName("recipeIngredients")
+          let ing = document.createElement("li");
+          let removeButton = document.createElement("span");
+          removeButton.className = "removeIngredient";
+          removeButton.textContent = "Remove";
+          removeButton.addEventListener("click", function() {
+              let parent = removeButton.parentElement;
+              let grandParent = parent.parentElement;
+              grandParent.removeChild(parent);
+              showEthicsWindow();
+          })
+          ing.textContent = name;
+          ing.className = "recipeIng";
+          ing.appendChild(removeButton);
+          list[0].appendChild(ing);
+          setTimeout(function () {
+            ing.style.backgroundColor = "white";
+          }, 100)
+          showEthicsWindow();
+      });
+  };
+}
+
 function altGenerator(){
   alt.textContent = ''
   ethicsGenerator()
@@ -230,10 +262,18 @@ function altGenerator(){
     var obj = mydata[i];
     if (obj.type == foodType){
       var li = document.createElement("li");
+    var spanTag = document.createElement("span");
+    var spanClass = document.createAttribute("class");
+    spanClass.value = "addAltIngredient";
+    var spanText = document.createTextNode("+");
+    spanTag.setAttributeNode(spanClass);
+    spanTag.appendChild(spanText);
     li.appendChild(document.createTextNode(obj.name));
+    li.appendChild(spanTag);
     alt.appendChild(li);
     }
   }
+  addAltIngredient();
 };
 
 
