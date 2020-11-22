@@ -243,7 +243,13 @@ function ethicsGenerator(){
     var obj = mydata[i];
     if (obj.name == ingName){
       var li = document.createElement("li");
-    li.appendChild(document.createTextNode(obj.info));
+    var aTag = document.createElement("a");
+    var ethicLink = document.createAttribute("href");
+    var linkText = document.createTextNode(obj.info);
+    ethicLink.value = obj.info;
+    aTag.setAttributeNode(ethicLink);
+    aTag.appendChild(linkText);
+    li.appendChild(aTag);
     ethics.appendChild(li);
     }
   }
