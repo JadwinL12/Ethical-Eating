@@ -113,7 +113,10 @@ app.get("/loginGuest", (req, res,next)=>{
     res.render("features/home") // add object to send to hello user name div
 })
 
-
+app.get('/logout', (req, res)=>{
+    req.session.loggedin = false;
+    res.redirect('/Login')
+})
 app.use((req,res)=>{
     res.status(404);
     res.send('404');
