@@ -13,6 +13,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+    secret: 'hello1234',
+    resave: false, 
+    saveUninitiazed: true,
+    cookie: {maxAge:6000000}
+}))
 //set view engine
 app.set("view engine", "ejs");
 //linking main.css
@@ -26,7 +32,7 @@ const insertQueryUser = 'INSERT INTO user (`username`, `password`, `recipes`) VA
 
 // home page
 app.get('/',(req,res)=>{
-    res.render("features/home");
+        res.render("features/home", {name: req.session.name,});
 });
 
 // ingredients page
@@ -36,7 +42,11 @@ app.get('/ingredients',(req,res)=>{
 
 // saved ingredients
 app.get('/savedRecipes', (req,res)=>{
-    res.render("features/savedRecipes");
+    if(req.session.loggedin){
+        res.render("features/savedRecipes");
+    }else{
+        res.redirect("Login")
+    }
 });
 
 // build a recipe
@@ -89,12 +99,19 @@ app.post('/login', (req, res, next)=>{
             return;
         }else{
             if(result.length >0){
-                res.render("features/home")
+                req.session.loggedin = true;
+                // req.session.name = username;
+                res.render("features/savedRecipes")
             }else{
-                res.render("feature/login")
+                res.render("features/login")
             }
         }
 })});
+
+app.get("/loginGuest", (req, res,next)=>{
+    req.session.name = "Guest";
+    res.render("features/home") // add object to send to hello user name div
+})
 
 
 app.use((req,res)=>{

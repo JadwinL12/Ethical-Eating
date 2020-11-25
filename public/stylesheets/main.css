@@ -8,6 +8,9 @@
 .signUpButton{
     display: inline-block;
 }
+.logoutButton{
+    display: inline-block;
+}
 /* login start */
 *, *::after, *::before{
     box-sizing: border-box;
