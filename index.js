@@ -24,6 +24,13 @@ app.set("view engine", "ejs");
 //linking main.css
 app.use(express.static(__dirname + "/public"));
 app.use('/img', express.static(__dirname + '/Images'));
+
+// toggling login/signup/logout with ejs
+app.get('*', function(req, res, next){
+    res.locals.loggedin = req.session.loggedin || null;
+    console.log(res.locals.loggedin)
+    next();
+});
 // app.use(express.urlencoded({ extended: false }));
 const getAllQueryUser = 'SELECT * FROM user';
 const getUserQueryUsername = 'SELECT MAX(username) from user WHERE username=?';
@@ -100,7 +107,7 @@ app.post('/login', (req, res, next)=>{
         }else{
             if(result.length >0){
                 req.session.loggedin = true;
-                // req.session.name = username;
+                res.locals.loggedin = req.session.loggedin;
                 res.render("features/savedRecipes")
             }else{
                 res.render("features/login")
@@ -115,6 +122,7 @@ app.get("/loginGuest", (req, res,next)=>{
 
 app.get('/logout', (req, res)=>{
     req.session.loggedin = false;
+    // req.session.destroy()
     res.redirect('/Login')
 })
 app.use((req,res)=>{
