@@ -27,8 +27,8 @@ app.use('/img', express.static(__dirname + '/Images'));
 
 // toggling login/signup/logout with ejs
 app.get('*', function(req, res, next){
-    res.locals.loggedin = req.session.loggedin || null;
-    console.log(res.locals.loggedin)
+    res.locals.loggedin = req.session.loggedin || false;
+    console.log(res.locals.loggedin, req.session.loggedin)
     next();
 });
 // app.use(express.urlencoded({ extended: false }));
@@ -39,7 +39,7 @@ const insertQueryUser = 'INSERT INTO user (`username`, `password`, `recipes`) VA
 
 // home page
 app.get('/',(req,res)=>{
-        res.render("features/home", {name: req.session.name,});
+        res.render("features/home");
 });
 
 // ingredients page
@@ -83,10 +83,14 @@ app.post('/signUp',(req,res,next)=>{
                       next(err);
                       return;
                     }else{
+                        req.session.loggedin = false;
+                        res.locals.loggedin = false;
                         res.render("features/successSignUp");
                     }
                 });
         }else{
+            req.session.loggedin = false;
+            res.locals.loggedin = false;
             res.render("features/signUp");
         }
   });
