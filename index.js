@@ -114,6 +114,8 @@ app.post('/login', (req, res, next)=>{
                 res.locals.loggedin = req.session.loggedin;
                 res.render("features/savedRecipes")
             }else{
+                req.session.loggedin = true;
+                res.locals.loggedin = req.session.loggedin;
                 res.render("features/login")
             }
         }
