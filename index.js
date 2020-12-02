@@ -18,7 +18,7 @@ app.use(session({
     resave: false, 
     saveUninitiazed: true,
     cookie: {maxAge:6000000}
-}))
+}));
 //set view engine
 app.set("view engine", "ejs");
 //linking main.css
