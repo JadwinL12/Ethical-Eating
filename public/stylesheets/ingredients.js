@@ -255,6 +255,7 @@ function addAltIngredient() {
   };
 }
 
+
 function altGenerator(){
   alt.textContent = ''
   ethicsGenerator()
@@ -268,7 +269,18 @@ function altGenerator(){
     var spanText = document.createTextNode("+");
     spanTag.setAttributeNode(spanClass);
     spanTag.appendChild(spanText);
+    var liID = document.createAttribute("id");
+    liID.value = "altIng"
+    var bRank = document.createElement("b");
+    var bClass = document.createAttribute("class")
+    bClass.value = "rank"
+    var bText = document.createTextNode(obj.ethicRank)
+    bRank.setAttributeNode(bClass)
+    bRank.appendChild(bText)
     li.appendChild(document.createTextNode(obj.name));
+    li.appendChild(document.createTextNode(" - "))
+    li.setAttributeNode(liID)
+    li.appendChild(bRank);
     li.appendChild(spanTag);
     alt.appendChild(li);
     }
@@ -294,3 +306,27 @@ function ethicsGenerator(){
     }
   }
 };
+
+
+function sortRank() {
+  // function created using https://www.w3schools.com/howto/howto_js_sort_list.asp
+  var list = document.getElementById("alts");
+  var rank = list.getElementsByClassName("rank")
+  var li = list.getElementsByTagName("li")
+  var sorting = true;
+  var exchange = false;
+  while (sorting == true) {
+    sorting = false;
+    for (i = 0; i < li.length-1; i++) {
+      exchange = false;
+      if (rank[i].innerText < rank[i+1].innerText) {
+        exchange = true;
+        break;
+      }
+    }
+    if (exchange == true) {
+      li[i].parentNode.insertBefore(li[i+1], li[i]);
+      sorting = true;
+    }
+  }
+}
