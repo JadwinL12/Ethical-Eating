@@ -109,42 +109,42 @@ window.addEventListener("load", function() {
     changeMenuDisplay();
 })
 
-/* For ethics page, to be merged with ingredients/meals page eventually*/
+/* For ethics portion, merged with ingredients page */
 var food = `[
   {
       "name": "Brocolli",
       "type": "Vegetable",
-      "ethicRank": 1,
+      "ethicRank": 5,
       "info":""
   },
   {
       "name": "Lettuce",
       "type": "Vegetable",
-      "ethicRank": 1,
+      "ethicRank": 5,
       "info":""
   },
   {
       "name": "Cauliflower",
       "type": "Vegetable",
-      "ethicRank": 1,
+      "ethicRank": 5,
       "info":""
   },
   {
       "name": "Spinach",
       "type": "Vegetable",
-      "ethicRank": 1,
+      "ethicRank": 3,
       "info":"https://www.cornucopia.org/2017/11/eat-organic-spinach-avoid-conventional/"
   },
   {
     "name": "Celery",
     "type": "Vegetable",
-    "ethicRank": 1,
+    "ethicRank": 5,
     "info":""
   },
   {
     "name": "Cabbage",
     "type": "Vegetable",
-    "ethicRank": 1,
+    "ethicRank": 5,
     "info":""
   },
   {
@@ -162,19 +162,19 @@ var food = `[
   {
       "name": "Pork",
       "type": "Meat",
-      "ethicRank": 1,
+      "ethicRank": 2,
       "info":"https://www.animal-ethics.org/animal-exploitation-section/animals-used-food-introduction/pig-farms/"
   },
   {
       "name": "Turkey",
       "type": "Meat",
-      "ethicRank": 1,
+      "ethicRank": 3,
       "info":"https://www.latimes.com/opinion/op-ed/la-oe-singer-turkey-suffering-thanksgiving-20161122-story.html"
   },
   {
     "name": "Lamb",
     "type": "Meat",
-    "ethicRank": 1,
+    "ethicRank": 5,
     "info":""
   },
   {
@@ -198,13 +198,13 @@ var food = `[
   {
       "name": "Almond Milk",
       "type": "Dairy",
-      "ethicRank": 1,
+      "ethicRank": 3,
       "info":"https://sustainability.ucsf.edu/1.713"
   },
   {
       "name": "Oat Milk",
       "type": "Dairy",
-      "ethicRank": 1,
+      "ethicRank": 5,
       "info":""
   }
 ]`
