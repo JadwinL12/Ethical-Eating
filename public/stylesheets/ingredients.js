@@ -231,7 +231,7 @@ function addAltIngredient() {
       let button = buttonList[i];
       button.addEventListener("click", function() {
           let text = button.parentElement.textContent;
-          let name = text.slice(0, text.length - 1);
+          let name = text.slice(0, text.length - 5);
           let list = document.getElementsByClassName("recipeIngredients")
           let ing = document.createElement("li");
           let removeButton = document.createElement("span");
