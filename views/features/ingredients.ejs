@@ -7,8 +7,8 @@
     <div class="leftContainer">
       <button class="changeDisplay">Click Me To Browse The Menu</button>
 
-      <div class="title">Select A Category</div>
-      <button class="accordion">Veggies</button>
+      <div class="title">Select A Category<input type="text" id="searchCat" placeholder="Search for a category"></div>
+      <button class="accordion ingCat">Veggies</button>
       <div class="panel">
         <ul id="Vegetables">
           <li class="ing" id="Brocolli">Brocolli<span class="addIngredient">+</span></li>
@@ -20,7 +20,7 @@
         </ul>
       </div>
    
-      <button class="accordion">Meat</button>
+      <button class="accordion ingCat">Meat</button>
       <div class="panel">
         <ul id="Meat">
           <li class="ing" id="Chicken">Chicken<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
@@ -31,7 +31,7 @@
         </ul>
       </div>
       
-      <button class="accordion">Dairy/Dairy Alt</button>
+      <button class="accordion ingCat">Dairy/Dairy Alt</button>
       <div class="panel">
         <ul id="Dairy">
           <li class="ing" id="Butter">Butter<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
