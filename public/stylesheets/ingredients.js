@@ -104,9 +104,29 @@ function showEthicsWindow () {
   }
 }
 
+function displayIng () {
+  hideButton = document.getElementById("hideIng");
+  unethicalIng = document.getElementsByClassName("unethical");
+  hideButton.addEventListener("click", function() {
+    if (unethicalIng[0].style.display == "none") {
+      for (let i = 0; i < unethicalIng.length; i++) {
+        unethicalIng[i].style.display = "list-item";
+        hideButton.textContent = "Hide";
+      }
+    }
+    else {
+      for (let i = 0; i < unethicalIng.length; i++) {
+        unethicalIng[i].style.display = "none";
+        hideButton.textContent = "Show";
+      }
+    }
+  })
+ }
+
 window.addEventListener("load", function() {
     addIngredient();
     changeMenuDisplay();
+    displayIng();
 })
 
 /* For ethics portion, merged with ingredients page */

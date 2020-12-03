@@ -355,6 +355,13 @@
     transition: 0.4s;
 }
 
+.hideIng {
+    height: 30px;
+    width: 75px;
+    float: right;
+    text-align: center;
+    margin: auto;
+}
 
 /* ingredients end */ 
 

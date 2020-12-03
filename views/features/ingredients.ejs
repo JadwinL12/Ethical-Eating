@@ -7,38 +7,38 @@
     <div class="leftContainer">
       <button class="changeDisplay">Click Me To Browse The Menu</button>
 
-      <div class="title">Select A Category</div>
+      <div class="title">Select A Category<button class="hideIng" id="hideIng">Hide</button></div>
       <button class="accordion">Veggies</button>
       <div class="panel">
         <ul id="Vegetables">
-          <li class="ing" id="Brocolli">Brocolli<span class="addIngredient">+</span></li>
-          <li class="ing" id="Lettuce">Lettuce<span class="addIngredient">+</span></li>
-          <li class="ing" id="Cauliflower">Cauliflower<span class="addIngredient">+</span></li>
-          <li class="ing" id="Spinach">Spinach<span class="addIngredient">+</span></li>
-          <li class="ing" id="Celery">Celery<span class="addIngredient">+</span></li>
-          <li class="ing" id="Cabbage">Cabbage<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Brocolli">Brocolli<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Lettuce">Lettuce<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Cauliflower">Cauliflower<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Spinach">Spinach<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Celery">Celery<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Cabbage">Cabbage<span class="addIngredient">+</span></li>
         </ul>
       </div>
    
       <button class="accordion">Meat</button>
       <div class="panel">
         <ul id="Meat">
-          <li class="ing" id="Chicken">Chicken<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
-          <li class="ing" id="Beef">Beef<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
-          <li class="ing" id="Pork">Pork<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
-          <li class="ing" id="Turkey">Turkey<span class="addIngredient">+</span></li>
-          <li class="ing" id="Lamb">Lamb<span class="addIngredient">+</span></li>
+          <li class="ing unethical" id="Chicken">Chicken<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
+          <li class="ing unethical" id="Beef">Beef<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
+          <li class="ing unethical" id="Pork">Pork<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Turkey">Turkey<span class="addIngredient">+</span></li>
+          <li class="ing ethical" id="Lamb">Lamb<span class="addIngredient">+</span></li>
         </ul>
       </div>
       
       <button class="accordion">Dairy/Dairy Alt</button>
       <div class="panel">
         <ul id="Dairy">
-          <li class="ing" id="Butter">Butter<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
-          <li class="ing" id="Cream">Cream<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
-          <li class="ing" id="CowMilk">Cow Milk<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
-          <li class="ing" id="AlmondMilk">Almond Milk<span class="addIngredient">+</span></li></li>
-          <li class="ing" id="OatMilk">Oat Milk<span class="addIngredient">+</span></li></li>
+          <li class="ing unethical" id="Butter">Butter<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
+          <li class="ing unethical" id="Cream">Cream<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
+          <li class="ing unethical" id="CowMilk">Cow Milk<a onclick="typeFind(this.parentNode.parentNode.id); nameFind(this.parentNode.id)" href="javascript:altGenerator()"><img src="exclamation-mark-png.jpg" class="img1" title="This ingredient has an ethical problem. Clicking on this exclamation point will generate a link to the ethics behind this ingredient, and a list of alternatives sorted by rank."></a><span class="addIngredient">+</span></li></li>
+          <li class="ing ethical" id="AlmondMilk">Almond Milk<span class="addIngredient">+</span></li></li>
+          <li class="ing ethical" id="OatMilk">Oat Milk<span class="addIngredient">+</span></li></li>
         </ul>
       </div>
     </div>
