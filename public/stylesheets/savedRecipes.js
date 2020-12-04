@@ -6,8 +6,9 @@ function togglePopup(){
 var Carbonara = ["Virgin Olive Oil", "Pancetta", "Garlic", "Eggs", "Spaghetti", "Salt", "Black Pepper"]
 var HawaiianPizza = ["Olive Oil", "mozzarella","pineapple","bacon"]
 var BarbecueRibs = ["Pork ribs","Barbecue sauce","Salt"]
+var CaesarSalad = ["Garlic","Olive Oil","Anchovies","Lemon Juice", "Salt and Pepper","Chicken","Italian Bread","Romaine Lettuce","Parmesan Cheese"]
 
-var addedRecipe = ["Carbonara","HawaiianPizza","BarbecueRibs"]
+var addedRecipe = ["Carbonara","HawaiianPizza","BarbecueRibs","CaesarSalad"]
 
 
 function showIng(data){
