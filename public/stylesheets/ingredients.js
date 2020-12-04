@@ -224,7 +224,193 @@ var food = `[
       "type": "Dairy",
       "ethicRank": 5,
       "info":""
-  }
+  },
+  {
+    "name": "Flour",
+    "type": "Grain",
+    "ethicRank": 5,
+    "info":""
+},
+{
+  "name": "Baking Soda",
+  "type": "Premade",
+  "ethicRank": 3,
+  "info":"https://grist.org/living/where-does-baking-soda-come-from-and-is-it-really-so-eco-friendly/"
+},
+{
+  "name": "Salt",
+  "type": "Seasoning",
+  "ethicRank": 3,
+  "info":"https://www.npr.org/sections/thesalt/2019/10/03/763960436/pakistan-wants-you-to-know-most-pink-himalayan-salt-doesnt-come-from-india"
+},
+{
+  "name": "Sugar",
+  "type": "Seasoning",
+  "ethicRank": 2,
+  "info":"https://foodprint.org/blog/ethical-sugar/"
+},
+{
+  "name": "Chicken Eggs",
+  "type": "Meat",
+  "ethicRank": 1,
+  "info":"https://www.theguardian.com/commentisfree/2017/jan/30/free-range-eggs-con-ethical"
+},
+{
+  "name": "Black Pepper",
+  "type": "Seasoning",
+  "ethicRank": 2,
+  "info":"https://theecologist.org/2011/jan/25/pepper-how-our-favourite-spice-tainted-deadly-legacy"
+},
+{
+  "name": "Oats",
+  "type": "Premade",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Cinnamon",
+  "type": "Seasoning",
+  "ethicRank": 3,
+  "info":"https://www.npr.org/sections/thesalt/2013/12/25/256602581/when-is-cinnamon-spice-not-so-nice-the-great-danish-debate"
+},
+{
+  "name": "Parsley",
+  "type": "Seasoning",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Mustard Powder",
+  "type": "Seasoning",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Cheese",
+  "type": "Dairy",
+  "ethicRank": 1,
+  "info":"https://link.springer.com/article/10.1007/s10806-018-9740-9"
+},
+{
+  "name": "Yogurt",
+  "type": "Dairy",
+  "ethicRank": 1,
+  "info":"https://link.springer.com/article/10.1007/s10806-018-9740-9"
+},
+{
+  "name": "Strawberries",
+  "type": "Fruit",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Raspberries",
+  "type": "Fruit",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Blueberry",
+  "type": "Fruit",
+  "ethicRank": 3,
+  "info":"https://www.npr.org/sections/thesalt/2016/07/13/484015376/for-pickers-blueberries-mean-easier-labor-but-more-upheaval"
+},
+{
+  "name": "Garlic",
+  "type": "Vegetable",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Olive Oil",
+  "type": "Seasoning",
+  "ethicRank": 2,
+  "info":"https://www.ethicalconsumer.org/food-drink/olive-harvesting-bird-deaths"
+},
+{
+  "name": "Anchovies",
+  "type": "Meat",
+  "ethicRank": 1,
+  "info":"https://www.theguardian.com/environment/2008/sep/04/fishing.endangeredspecies"
+},
+{
+  "name": "Black Beans",
+  "type": "Meat",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Tortillas",
+  "type": "Premade",
+  "ethicRank": 2,
+  "info":"https://www.npr.org/sections/thesalt/2014/08/08/338637182/what-are-those-parabens-doing-in-my-tortilla"
+},
+{
+  "name": "Cilantro",
+  "type": "Seasoning",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Sour Cream",
+  "type": "Dairy",
+  "ethicRank": 1,
+  "info":"https://link.springer.com/article/10.1007/s10806-018-9740-9"
+},
+{
+  "name": "Tomato",
+  "type": "Fruit",
+  "ethicRank": 3,
+  "info":"https://www.apartmenttherapy.com/sustainable-tomatoes-the-ethic-159676"
+},
+{
+  "name": "Potato",
+  "type": "Vegetable",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Garlic Powder",
+  "type": "Seasoning",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Carrot",
+  "type": "Vegetable",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Thyme",
+  "type": "Seasoning",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Mushrooms",
+  "type": "Meat",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Basil",
+  "type": "Seasoning",
+  "ethicRank": 5,
+  "info":""
+},
+{
+  "name": "Noodles",
+  "type": "Grain",
+  "ethicRank": 3,
+  "info":"https://thegoodshoppingguide.com/ethical-pasta-rice-pulse/"
+},
+{
+  "name": "Bread",
+  "type": "Premade",
+  "ethicRank": 3,
+  "info":"https://thegoodshoppingguide.com/ethical-bread/"
+}
 ]`
 
 var mydata = JSON.parse(food);
@@ -239,7 +425,7 @@ function typeFind(onclickID){
 function nameFind(onclickID){
   var nameFound = onclickID;
   window.ingName = nameFound
-}
+};
 
 // using addIngredient() as base, add alternative ingredients
 function addAltIngredient() {
