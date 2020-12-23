@@ -1,3 +1,3 @@
 # ethical_eating
 
-# test commit - anthony ferrari
+# Group members: Anthony Ferrarri, Jadwin Lin, Christina Oh, Joshua Sanford, Chun Ho Chan
